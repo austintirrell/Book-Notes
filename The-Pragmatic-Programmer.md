@@ -1,6 +1,13 @@
 # The Pragmatic Programmer (20th Anniversary Edition) Notes
 My thoughts and what I liked about each chapter or topic as I read them.
 
+## Table of Contents
+Will add chapters as I read them...
+
+[Chapter 1. A Pragmatic Philosophy](#chapter-1-a-pragmatic-philosophy)
+[Chapter 2. A Pragmatic Approach](#chapter-2-a-pragmatic-approach)
+[Chapter 3: The Basic Tools](#chapter-3-the-basic-tools)
+
 ## Preface
 Kaizen - A Japanese business philosophy of continuous improvement of working practices, personal efficiency, etc.
 When asking someone what they do to make their lawn look so nice, they respond with "Every morning wipe the dew off, every other day mow the grass, and once a week roll it, and after 500 years of doing this, you too can have a nice lawn." This relates to our programming skills. If we continue to make small improvements, and continue learning new things and better ways to code, we will notice improvements much faster than a lawn. To have this "kaizen" mentality is important to getting better.
