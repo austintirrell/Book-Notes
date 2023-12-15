@@ -4,8 +4,8 @@ My thoughts and what I liked about each chapter or topic as I read them.
 ## Table of Contents
 Will add chapters as I read them...
 
-[Chapter 1. A Pragmatic Philosophy](#chapter-1-a-pragmatic-philosophy)
-[Chapter 2. A Pragmatic Approach](#chapter-2-a-pragmatic-approach)
+[Chapter 1. A Pragmatic Philosophy](#chapter-1-a-pragmatic-philosophy)  
+[Chapter 2. A Pragmatic Approach](#chapter-2-a-pragmatic-approach)  
 [Chapter 3: The Basic Tools](#chapter-3-the-basic-tools)
 
 ## Preface
