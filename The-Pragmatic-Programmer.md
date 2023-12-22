@@ -86,3 +86,6 @@ The word bug has been used to describe an object of terror since the 14th centur
 
 ### Topic 21. Text Manipulation
 Pragmatic programmers manipulate text the same way woodworkers manipulate wood. We need to handle transformations that can't be handled by the basic tools we already know and use. Learn a text manipulation language - like Python. Use these languages to automate things. If we take the advice to keep things in plain text, using these text manipulation languages to write scripts will bring a whole host of benefits. Automations used to index this book and upload sample PDFs are keen examples of what this can do.
+
+### Topic 22. Engineering Daybooks
+A daybook is a journal in which they recorded everything they did. Stuff they learned, ideas, sketches. When the book got full, they would write the date and stick it on the shelf. Jot down what you're working on. While you're debugging write down stack calls. When needing to remember to come back to something, write it down. It gives you a place to store ideas that isn't immediately relevant to the task at hand. It acts as a kind of rubber duck, for us to explain something we're working on and see the issue. We can use daybooks as a memory to look back on as well.
