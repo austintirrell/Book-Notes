@@ -7,6 +7,7 @@ Will add chapters as I read them...
 [Chapter 1. A Pragmatic Philosophy](#chapter-1-a-pragmatic-philosophy)  
 [Chapter 2. A Pragmatic Approach](#chapter-2-a-pragmatic-approach)  
 [Chapter 3: The Basic Tools](#chapter-3-the-basic-tools)
+[Chapter 4. Pragmatic Paranoia](#chapter-4-pragmatic-paranoia)
 
 ## Preface
 Kaizen - A Japanese business philosophy of continuous improvement of working practices, personal efficiency, etc.
@@ -89,3 +90,15 @@ Pragmatic programmers manipulate text the same way woodworkers manipulate wood. 
 
 ### Topic 22. Engineering Daybooks
 A daybook is a journal in which they recorded everything they did. Stuff they learned, ideas, sketches. When the book got full, they would write the date and stick it on the shelf. Jot down what you're working on. While you're debugging write down stack calls. When needing to remember to come back to something, write it down. It gives you a place to store ideas that isn't immediately relevant to the task at hand. It acts as a kind of rubber duck, for us to explain something we're working on and see the issue. We can use daybooks as a memory to look back on as well.
+
+## Chapter 4. Pragmatic Paranoia
+You can't write perfect software. Accept it. Embrace it. Perfect software doesn't exist. If we don't accept that as fact, we'll waste time chasing an unattainable dream. When we drive a car, we drive defensively. We are looking out for other bad drivers. The same goes for code we work on. We should code defensively. But not only do we look out for other's mistakes, we look out for our own.
+
+### Topic 23. Design by Contract
+Dealing with computer systems is hard, but dealing with people is harder. Contracts are used to help humans interact. Can we use this thinking in our programming? Yes. Create a program that does no more, and no less than what its purpose is. This is how we design by contract. Failure to live up to the contract is a bug. This should never happen.
+
+### Topic 24. Dead Programs Tell No Lies
+Other people can tell something is wrong with you before you notice it yourself. Same goes for our code. Sometimes a library or module catches the error first. Each and every case or switch statement needs to have a default clause. We need to know when the impossible happens. We're coding defensively. We're making sure the code is what we think it is and that the output is what we think it is. You could convince yourself that the error was a fluke and that it was impossible, but pragmatic programmers recognize that something bad happened. Crash early. One of the best things we can do when something unaccounted for is to crash early. That way we aren't writing or using corrupt data. When your code discovers that something impossible just happened, it should crash. A dead program does less damage than a crippled one.
+
+### Topic 25. Assertive Programming
+Use assertions to prevent the impossible. Whenever you catch yourself thinking "that can never happen", add assertions to make sure it doesn't happen. Don't place assertions in place of real error handling. Assertions to catch errors can actually cause errors. Leave assertions turned on. Assertions are not an overhead in the code, and we shouldn't remove assertions in production because it slows the program down. Turning off assertions in production is like taking away the giant net just because you've walked across the highwire once and didn't fall.
