@@ -9,6 +9,7 @@ Will add chapters as I read them...
 [Chapter 3. The Basic Tools](#chapter-3-the-basic-tools)
 [Chapter 4. Pragmatic Paranoia](#chapter-4-pragmatic-paranoia)
 [Chapter 5. Bend, or Break](#chapter-5-bend-or-break)
+[Chapter 6. Concurrency](#chapter-6-concurrency)
 
 ## Preface
 Kaizen - A Japanese business philosophy of continuous improvement of working practices, personal efficiency, etc.
@@ -127,3 +128,12 @@ In object-oriented programming, there is cost and limitations associated with us
 
 ### Topic 32. Configuration
 We can use configuration outside of our code, to allow it to be more flexible and easier to change. We want the configuration to be external, so that we don't have to modify, recompile, or redeploy our applications. To externalize our configuration we can use config files, databases, or environment variables. Environment variables are typically used for sensitive information like API keys or other credentials. We want to use environment variables because they are easy to change between environments, and shouldn't be checked into source control like git, to not expose sensitive data. If we have environments that have many different configurations and will be changing and updating a lot, we can look into configuration management tools that can help manage our configuration settings across multiple environments.
+
+## Chapter 6. Concurrency
+Concurrency is when two or more pieces of code act as if they run at the same time. Parallelism is when they do run at the same time. Concurrency is achieved with threading. Parallelism is achieved with multiple cores in a CPU, multiple CPUs, or multiple computers tied together. To build modern software to account for the real world where things are done asynchronous, we need concurrency. Otherwise, our software will feel sluggish. Temporal coupling is when your code depends on things that are not needed to be done, in order to solve the problem at hand. Shared state is when two or more chunks of code hold references to the same piece of data, and is error prone. Concurrent and parallel code used to be exotic, but now it is required.
+
+### Topic 33. Breaking Temporal Coupling
+Temporal coupling is all about time. There are two important aspects to time that we need to be concerned about, concurrency and ordering. When designing softare, we tend to always think linear. Tick must happen before tock. This approach is not flexible, and not realistic. To better design our software we need to think about what can happen at the same time and what must happen in strict order. To better design concurrent software we can use activity diagrams. When designing for concurrency we are looking for activities that take time, but not time in our code. Concurrency is a software mechanism, and parallelism is a hardware concern.
+
+### Topic 34. Shared State Is Incorrect State
+You have a joint bank account. You and your partner both try buying a new phone at the same time, but there's only enough in the account to purchase one. Someone, either the bank account, the store, or you, is going to be unhappy. This is shared state. The problem is not that the two processes can change that state, but that its memory of that state is consistent. The solution to this problem is a semaphore. A semaphore states that you and only you are going to access the bank account and once you complete your purchase, you then unlock the semaphore and allow for more purchases to be made once the transaction is complete. If two purchases were made at the same time, either you or your partner's transaction would get the semaphore, and the other would be forced to wait. Once the semaphore is released from the other, then the other transaction can then take a look at the account balance and see there is not enough money left and the transaction is declined. We can make the semaphore a core mechanic of the bank itself, and not relying on the cardholders.
