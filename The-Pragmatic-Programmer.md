@@ -6,10 +6,10 @@ Will add chapters as I read them...
 
 [Chapter 1. A Pragmatic Philosophy](#chapter-1-a-pragmatic-philosophy)  
 [Chapter 2. A Pragmatic Approach](#chapter-2-a-pragmatic-approach)  
-[Chapter 3. The Basic Tools](#chapter-3-the-basic-tools)
-[Chapter 4. Pragmatic Paranoia](#chapter-4-pragmatic-paranoia)
-[Chapter 5. Bend, or Break](#chapter-5-bend-or-break)
-[Chapter 6. Concurrency](#chapter-6-concurrency)
+[Chapter 3. The Basic Tools](#chapter-3-the-basic-tools)  
+[Chapter 4. Pragmatic Paranoia](#chapter-4-pragmatic-paranoia)  
+[Chapter 5. Bend, or Break](#chapter-5-bend-or-break)  
+[Chapter 6. Concurrency](#chapter-6-concurrency)  
 
 ## Preface
 Kaizen - A Japanese business philosophy of continuous improvement of working practices, personal efficiency, etc.
@@ -137,3 +137,9 @@ Temporal coupling is all about time. There are two important aspects to time tha
 
 ### Topic 34. Shared State Is Incorrect State
 You have a joint bank account. You and your partner both try buying a new phone at the same time, but there's only enough in the account to purchase one. Someone, either the bank account, the store, or you, is going to be unhappy. This is shared state. The problem is not that the two processes can change that state, but that its memory of that state is consistent. The solution to this problem is a semaphore. A semaphore states that you and only you are going to access the bank account and once you complete your purchase, you then unlock the semaphore and allow for more purchases to be made once the transaction is complete. If two purchases were made at the same time, either you or your partner's transaction would get the semaphore, and the other would be forced to wait. Once the semaphore is released from the other, then the other transaction can then take a look at the account balance and see there is not enough money left and the transaction is declined. We can make the semaphore a core mechanic of the bank itself, and not relying on the cardholders.
+
+### Topic 35. Actors and Processes
+An actor is a virtual processor with its own local state. Each actor has a mailbox. Actors are idle when they have no messages in their mailbox. When a message appears though, it processes the message how we tell it to. When finished processing the message it will work on the next message in the stack, or go back to being idle if there are none. A process is a more general purpose virtual processor. These are normally implemented by operating systems to allow for concurrency. Processes are constrained to behave like actors. Actors can only be concurrent. Use actors for concurrency without shared state. Actors can also be used to solve the diner dilemna. With the actor model, we don't need to write code to handle concurrency as there is no shared state. The actor model also works well on any type of hardware.
+
+### Topic 36. Blackboards
+A blackboard is used by detectives to assemble facts and evidence across shifts until the case is solved. None of the detectives need to know of the existence of the other detectives, they just watch the board for new information and add their findings. The only thing the detectives have in common is their desire to solve the case. This is a form of laissez faire concurrency. The detectives are actors. These systems never took off because the need for the kind of concurrent processing hadn't developed. Workflows often need changed and can be programmer intensive, but blackboards can handle new rules and triggers as the process required changes. The benefits of actor and/or blackboard systems come at a cost. The cost being that these approaches are harder to reason about, and harder to debug. They are often debugged by sending tracer IDs in each message so something can be traced through the system. Also, these techniques are harder to document. Keep a central repository of different message formats and APIs available.
